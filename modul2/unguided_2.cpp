@@ -2,49 +2,58 @@
 
 using namespace std;
 
-int main() {
-    int panj_arr;
-    cout << "masukkan Panjang data : ";
-    cin >> panj_arr;
-    float datanya[panj_arr];
-    float sum = 0;
+int main()
+{
+    int a, b, c;
 
-    for (int i = 0; i< panj_arr; i++) {
-        cout << "Masukkan data ke " << i << " : ";
-        cin >> datanya[i];
-    }
+    cout << "Masukkan dimensi 1 : ";
+    cin >> a;
 
-    float min = datanya[0];
-    float max = datanya[0];
+    cout << "Masukkan dimensi 2 : ";
+    cin >> b;
 
-    for (int i = 0; i< panj_arr; i++) {
+    cout << "Masukkan dimensi 3 : ";
+    cin >> c;
 
-        if (datanya[i] > max) {
-            max = datanya[i];
+    int array_dim3[a][b][c];
+    for (int i = 0; i <a; i++)
+    {
+        for (int j = 0; j < b; j++)
+        {
+            for (int k = 0; k < c; k++)
+            {
+                cout << "Masukkan elemen ke [" << i << "][" << j << "][" << k << "] : ";
+                cin >> array_dim3[i][j][k];
+            }
         }
-        
+
+        cout << endl;
     }
 
-     for (int i = 0; i< panj_arr; i++) {
-
-        if (datanya[i] < min) {
-            min = datanya[i];
+    for (int i = 0; i < a; i++)
+    {
+        for (int j = 0; j < b; j++)
+        {
+            for (int k = 0; k < c; k++)
+            {
+                cout << "Data Array[" << i << "][" << j << "][" << k << "] = " << array_dim3[i][j][k] << endl;
+            }
         }
-    
     }
+    cout << endl;
 
-
-     for (int i = 0; i < panj_arr; i++) {
-    
-        sum += datanya[i];
+    for (int i = 0; i < a; i++)
+    {
+        for (int j = 0; j < b; j++)
+        {
+            for (int k = 0; k < c; k++)
+            {
+                cout << array_dim3[i][j][k] << ends;
+            }
+            cout << endl;
+        }
+        cout << endl;
     }
-
-    cout << "Minimum : " << min << endl;
-
-    cout << "Maximum : " << max << endl;
-
-    cout << "Rata Rata : " << sum/panj_arr << endl;
-
 
     return 0;
 }
